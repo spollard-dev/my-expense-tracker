@@ -26,7 +26,7 @@ jobs:
       run: pyinstaller --onefile full_expense_tracker_for_exe.py
 
     - name: Upload executable artifact
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: expense-tracker-exe
         path: dist/full_expense_tracker_for_exe.exe
