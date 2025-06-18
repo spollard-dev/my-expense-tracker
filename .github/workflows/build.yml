@@ -1,4 +1,4 @@
-name: Build Expense Tracker .exe
+name: Build_Expense_Tracker.exe
 
 on:
   push:
