@@ -1,5 +1,5 @@
 .github/workflows/build.yml
-name: Build_Expense_Tracker.exe
+name: Build Expense Tracker .exe
 
 on:
   push:
