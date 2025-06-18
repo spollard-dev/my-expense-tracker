@@ -1,0 +1,31 @@
+name: Build Expense Tracker .exe
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build-windows:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Install Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Install PyInstaller
+        run: pip install pyinstaller
+
+      - name: Build executable
+        run: pyinstaller --onefile full_expense_tracker_for_exe.py
+
+      - name: Upload executable artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: expense-tracker-exe
+          path: dist/full_expense_tracker_for_exe.exe
